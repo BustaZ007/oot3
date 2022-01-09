@@ -1,0 +1,6 @@
+.idea/
+Dictionary/bin
+Dictionary/obj
+DictionaryTests/bin
+DictionaryTests/obj
+.DS_Store
