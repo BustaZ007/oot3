@@ -1,0 +1,12 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=15c6dc44_002De070_002D4305_002D9fb2_002Dd7641578cdf2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MethodAddItemTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::2F1353D6-BC5A-4FBC-8C45-04A075A9FD05::net6.0::DictionaryTests.BinaryTreeDictionaryTests.MethodAddItemTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5e169bb9_002D43a1_002D49bc_002Da951_002Dbd8fb6ba9541/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="BinaryTreeDictionaryTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::2F1353D6-BC5A-4FBC-8C45-04A075A9FD05::net6.0::DictionaryTests.BinaryTreeDictionaryTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::2F1353D6-BC5A-4FBC-8C45-04A075A9FD05::net6.0::DictionaryTests.Tests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

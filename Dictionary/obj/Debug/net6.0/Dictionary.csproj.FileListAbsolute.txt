@@ -1,0 +1,15 @@
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\bin\Debug\net6.0\Dictionary.exe
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\bin\Debug\net6.0\Dictionary.deps.json
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\bin\Debug\net6.0\Dictionary.runtimeconfig.json
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\bin\Debug\net6.0\Dictionary.dll
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\bin\Debug\net6.0\ref\Dictionary.dll
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\bin\Debug\net6.0\Dictionary.pdb
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\obj\Debug\net6.0\Dictionary.csproj.AssemblyReference.cache
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\obj\Debug\net6.0\Dictionary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\obj\Debug\net6.0\Dictionary.AssemblyInfoInputs.cache
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\obj\Debug\net6.0\Dictionary.AssemblyInfo.cs
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\obj\Debug\net6.0\Dictionary.csproj.CoreCompileInputs.cache
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\obj\Debug\net6.0\Dictionary.dll
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\obj\Debug\net6.0\ref\Dictionary.dll
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\obj\Debug\net6.0\Dictionary.pdb
+C:\Users\Вувка\RiderProjects\OOT3\Dictionary\obj\Debug\net6.0\Dictionary.genruntimeconfig.cache
