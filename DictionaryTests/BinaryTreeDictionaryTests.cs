@@ -72,6 +72,7 @@ public class BinaryTreeDictionaryTests
             Assert.AreEqual(2, testedDic.Count);
             Assert.AreEqual(true,testedDic.Remove(new KeyValuePair<string, int>("2", 2)));
             Assert.AreEqual(1, testedDic.Count);
+            Assert.AreEqual(false,testedDic.Remove(new KeyValuePair<string, int>("1", 2)));
             Assert.AreEqual(0, _trustedDictionary.Except(testedDic).Count());
         }
         [Test]
@@ -172,6 +173,7 @@ public class BinaryTreeDictionaryTests
             testedDic["1"] = 1;
         
             Assert.AreEqual(true, testedDic.Contains(new KeyValuePair<string, int>("1", 1)));
+            Assert.AreEqual(false, testedDic.Contains(new KeyValuePair<string, int>("1", 2)));
             Assert.AreEqual(false, testedDic.Contains(new KeyValuePair<string, int>("2", 2)));
         }
         [Test]

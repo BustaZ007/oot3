@@ -5,7 +5,7 @@
     {
         private BinaryTreeNode<T>? _root;
 
-        public bool Find(T element)
+        public T Find(T element)
         {
             var current = _root;
 
@@ -21,11 +21,11 @@
                         current = current.Right;
                         break;
                     default:
-                        return true;
+                        return current.Value;
                 }
             }
 
-            return false;
+            return default;
         }
 
         public bool Insert(T element)

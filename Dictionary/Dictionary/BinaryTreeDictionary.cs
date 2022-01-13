@@ -42,7 +42,8 @@ public class BinaryTreeDictionary<TK,TV> : IDictionary<TK,TV> where TK : ICompar
     public bool Contains(KeyValuePair<TK, TV> item)
     {
         var (key, value) = item;
-        return _binaryTree.Find(new BinaryTreeDictionaryItem<TK, TV>(key, value));
+        var finditem = _binaryTree.Find(new BinaryTreeDictionaryItem<TK, TV>(key, value));
+        return finditem != null && finditem.Key.CompareTo(key) == 0 && finditem.Value != null &&  finditem.Value.Equals(value);
     }
 
     public void CopyTo(KeyValuePair<TK, TV>[] array, int arrayIndex)
@@ -57,7 +58,12 @@ public class BinaryTreeDictionary<TK,TV> : IDictionary<TK,TV> where TK : ICompar
     public bool Remove(KeyValuePair<TK, TV> item)
     {
         var (key, value) = item;
-        return _binaryTree.Remove(new BinaryTreeDictionaryItem<TK, TV>(key, value));
+        if (_binaryTree.Find(new BinaryTreeDictionaryItem<TK, TV>(key)).Value.Equals(value))
+        {
+            return _binaryTree.Remove(new BinaryTreeDictionaryItem<TK, TV>(key, value));
+        }
+
+        return false;
     }
     
     public void Add(TK key, TV value)
@@ -67,10 +73,7 @@ public class BinaryTreeDictionary<TK,TV> : IDictionary<TK,TV> where TK : ICompar
 
     public bool ContainsKey(TK key)
     {
-        return _binaryTree
-            .Traverse()
-            .Select(item => item.Key)
-            .Contains(key);
+        return _binaryTree.Find(new BinaryTreeDictionaryItem<TK,TV>(key)).Key.CompareTo(key) == 0;
     }
     //Из-за проблем описанных выше, пришлось добавить еще один конструктор для BinaryTreeDictionaryItem.
     public bool Remove(TK key)
@@ -80,25 +83,15 @@ public class BinaryTreeDictionary<TK,TV> : IDictionary<TK,TV> where TK : ICompar
 
     public bool TryGetValue(TK key, out TV? value)
     {
-        var isFind = _binaryTree.Find(new BinaryTreeDictionaryItem<TK, TV>(key));
-        value = default;
-        if (isFind)
-        {
-            value = _binaryTree
-                .Traverse()
-                .FirstOrDefault(i => i.Key.CompareTo(key) == 0)!
-                .Value;
-        }
+        var item = _binaryTree.Find(new BinaryTreeDictionaryItem<TK, TV>(key));
+        value = item.Value;
 
-        return isFind;
+        return item != null;
     }
 
     public TV this[TK key]
     {
-        get => _binaryTree
-            .Traverse()
-            .FirstOrDefault(i => i.Key.CompareTo(key) == 0)!
-            .Value;
+        get => _binaryTree.Find(new BinaryTreeDictionaryItem<TK, TV>(key)).Value;
         set => Add(key, value);
     }
 }
