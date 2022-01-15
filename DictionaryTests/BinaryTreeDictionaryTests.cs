@@ -76,6 +76,13 @@ public class BinaryTreeDictionaryTests
             Assert.AreEqual(0, _trustedDictionary.Except(testedDic).Count());
         }
         [Test]
+        public void RemoveItemWithNullValueTest()
+        {
+            var dict = new BinaryTreeDictionary<int, string>();
+            dict[0] = null;
+            Assert.AreEqual(true,dict.Remove(new KeyValuePair<int, string>(0, null)));
+        }
+        [Test]
         public void RemoveItemByKeyTest()
         {
             var _trustedDictionary = new Dictionary<string, int>{
@@ -101,6 +108,7 @@ public class BinaryTreeDictionaryTests
             
             Assert.AreEqual(1, testedDic.Count);
             Assert.AreEqual(false,testedDic.Remove("2"));
+            Assert.AreEqual(false,testedDic.Remove(new KeyValuePair<string, int>("2", 2)));
             Assert.AreEqual(1, testedDic.Count);
             Assert.AreEqual(0, _trustedDictionary.Except(testedDic).Count());
         }
@@ -171,10 +179,22 @@ public class BinaryTreeDictionaryTests
         {
             var testedDic = new BinaryTreeDictionary<string, int>();
             testedDic["1"] = 1;
-        
             Assert.AreEqual(true, testedDic.Contains(new KeyValuePair<string, int>("1", 1)));
             Assert.AreEqual(false, testedDic.Contains(new KeyValuePair<string, int>("1", 2)));
             Assert.AreEqual(false, testedDic.Contains(new KeyValuePair<string, int>("2", 2)));
+        }
+        [Test]
+        public void ContainsTestOfNull()
+        {
+            var dict = new BinaryTreeDictionary<int, string>();
+            dict[0] = null;
+            Assert.AreEqual(true, dict.Contains(new KeyValuePair<int, string>(0, null)));
+        }
+        [Test]
+        public void ContainsTestNotExistItem()
+        {
+            var dict = new BinaryTreeDictionary<int, int>();
+            Assert.AreEqual(false, dict.Contains(new KeyValuePair<int, int>(0, 0)));
         }
         [Test]
         public void CopyToTest()

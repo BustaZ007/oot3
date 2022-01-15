@@ -43,6 +43,10 @@ public class BinaryTreeDictionary<TK,TV> : IDictionary<TK,TV> where TK : ICompar
     {
         var (key, value) = item;
         var finditem = _binaryTree.Find(new BinaryTreeDictionaryItem<TK, TV>(key, value));
+        if (finditem != null && finditem.Value == null && value == null)
+        {
+            return true;
+        }
         return finditem != null && finditem.Key.CompareTo(key) == 0 && finditem.Value != null &&  finditem.Value.Equals(value);
     }
 
@@ -58,9 +62,15 @@ public class BinaryTreeDictionary<TK,TV> : IDictionary<TK,TV> where TK : ICompar
     public bool Remove(KeyValuePair<TK, TV> item)
     {
         var (key, value) = item;
-        if (_binaryTree.Find(new BinaryTreeDictionaryItem<TK, TV>(key)).Value.Equals(value))
+        var newItem = new BinaryTreeDictionaryItem<TK, TV>(key, value);
+        var findItem = _binaryTree.Find(newItem);
+        if (findItem != null && findItem.Value == null && value == null)
         {
-            return _binaryTree.Remove(new BinaryTreeDictionaryItem<TK, TV>(key, value));
+            return true;
+        }
+        if (findItem != null && findItem.Value.Equals(value))
+        {
+            return _binaryTree.Remove(newItem);
         }
 
         return false;
