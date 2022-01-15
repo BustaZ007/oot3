@@ -68,7 +68,7 @@ public class BinaryTreeDictionary<TK,TV> : IDictionary<TK,TV> where TK : ICompar
         {
             return true;
         }
-        if (findItem != null && findItem.Value.Equals(value))
+        if (findItem != null && findItem.Value != null && findItem.Value.Equals(value))
         {
             return _binaryTree.Remove(newItem);
         }

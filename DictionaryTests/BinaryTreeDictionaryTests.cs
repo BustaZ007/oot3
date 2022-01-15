@@ -81,6 +81,7 @@ public class BinaryTreeDictionaryTests
             var dict = new BinaryTreeDictionary<int, string>();
             dict[0] = null;
             Assert.AreEqual(true,dict.Remove(new KeyValuePair<int, string>(0, null)));
+            Assert.AreEqual(false,dict.Remove(new KeyValuePair<int, string>(0, "str")));
         }
         [Test]
         public void RemoveItemByKeyTest()
@@ -195,6 +196,9 @@ public class BinaryTreeDictionaryTests
         {
             var dict = new BinaryTreeDictionary<int, int>();
             Assert.AreEqual(false, dict.Contains(new KeyValuePair<int, int>(0, 0)));
+            var dict2 = new BinaryTreeDictionary<int, string>();
+            Assert.AreEqual(false, dict2.Contains(new KeyValuePair<int, string>(0, null)));
+            
         }
         [Test]
         public void CopyToTest()
