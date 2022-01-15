@@ -165,6 +165,8 @@ public class BinaryTreeDictionaryTests
             int value = 0; 
             Assert.AreEqual(true, testedDic.TryGetValue("1", out value ));
             Assert.AreEqual(1, value);
+            value = 0;
+            Assert.AreEqual(false, testedDic.TryGetValue("3", out value ));
         }
         //Other tests
         [Test]
@@ -174,6 +176,7 @@ public class BinaryTreeDictionaryTests
             testedDic["1"] = 1;
 
             Assert.AreEqual(true, testedDic.ContainsKey("1"));
+            Assert.AreEqual(false, testedDic.ContainsKey("2"));
         }
         [Test]
         public void ContainsTest()

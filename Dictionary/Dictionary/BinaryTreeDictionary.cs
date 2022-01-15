@@ -83,7 +83,8 @@ public class BinaryTreeDictionary<TK,TV> : IDictionary<TK,TV> where TK : ICompar
 
     public bool ContainsKey(TK key)
     {
-        return _binaryTree.Find(new BinaryTreeDictionaryItem<TK,TV>(key)).Key.CompareTo(key) == 0;
+        var findItem = _binaryTree.Find(new BinaryTreeDictionaryItem<TK, TV>(key));
+        return findItem != null && findItem.Key.CompareTo(key) == 0;
     }
     //Из-за проблем описанных выше, пришлось добавить еще один конструктор для BinaryTreeDictionaryItem.
     public bool Remove(TK key)
@@ -94,7 +95,8 @@ public class BinaryTreeDictionary<TK,TV> : IDictionary<TK,TV> where TK : ICompar
     public bool TryGetValue(TK key, out TV? value)
     {
         var item = _binaryTree.Find(new BinaryTreeDictionaryItem<TK, TV>(key));
-        value = item.Value;
+        
+        value = item != null ? item.Value : default;
 
         return item != null;
     }
